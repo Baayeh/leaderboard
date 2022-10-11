@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 1.5em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+div.main-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: 4em;
+  padding: 1.5em;
+}
+
+div.scores-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.score-list {
+  border: 3px solid #000;
+  margin-top: 1.5em;
+  width: 20em;
+}
+
+ul.score-list li {
+  padding: 5px;
+}
+
+ul.score-list li:nth-child(even) {
+  background-color: rgb(216, 216, 216);
+}
+
+button {
+  padding: 5px;
+  box-shadow: 3px 3px 5px;
+  cursor: pointer;
+}
+
+section.add-score h2 {
+  text-align: center;
+}
+
+form {
+  margin-top: 1.7em;
+}
+
+form div.form-control input {
+  padding: 7px;
+  width: 20em;
+}
+
+form div.form-control:nth-child(2) {
+  margin: 1em 0;
+}
+
+form div.form-action {
+  text-align: right;
+}

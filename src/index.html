@@ -1,13 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <title>Template</title>
-</head>
-<body>
-  <h2>HTML Template 1</h2>
-</body>
+<html lang="grid;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Template</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Leaderboard</h1>
+      </header>
+      <div class="main-content">
+        <section class="scores">
+          <div class="scores-header">
+            <h2>Recent Scores</h2>
+            <button type="button" class="refresh">Refresh</button>
+          </div>
+          <ul class="score-list">
+            <li class="score-item">
+              <span class="name">Name:</span>
+              <span class="score">100</span>
+            </li>
+            <li class="score-item">
+              <span class="name">Name:</span>
+              <span class="score">20</span>
+            </li>
+            <li class="score-item">
+              <span class="name">Name:</span>
+              <span class="score">50</span>
+            </li>
+            <li class="score-item">
+              <span class="name">Name:</span>
+              <span class="score">78</span>
+            </li>
+            <li class="score-item">
+              <span class="name">Name:</span>
+              <span class="score">125</span>
+            </li>
+            <li class="score-item">
+              <span class="name">Name:</span>
+              <span class="score">77</span>
+            </li>
+            <li class="score-item">
+              <span class="name">Name:</span>
+              <span class="score">42</span>
+            </li>
+          </ul>
+        </section>
+        <!-- Add score -->
+        <section class="add-score">
+          <h2>Add your score</h2>
+          <form>
+            <div class="form-control">
+              <label for="name-input" hidden></label>
+              <input
+                type="text"
+                name="name-input"
+                class="input-control"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="form-control">
+              <label for="score-input" hidden></label>
+              <input
+                type="text"
+                name="score-input"
+                class="input-control"
+                placeholder="Your score"
+              />
+            </div>
+            <div class="form-action">
+              <button type="submit" class="add-btn">Submit</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>
