@@ -27,12 +27,14 @@ div.scores-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 20em;
 }
 
 ul.score-list {
   border: 3px solid #000;
   margin-top: 1.5em;
   width: 20em;
+  display: none;
 }
 
 ul.score-list li {
