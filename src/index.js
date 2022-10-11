@@ -22,12 +22,9 @@ form.addEventListener('submit', (e) => {
   };
   const game = JSON.parse(localStorage.getItem('game'));
   addScore(game.id, userScore)
+    // eslint-disable-next-line no-unused-vars
     .then((res) => {
-      console.log(res);
       form.reset();
-    })
-    .catch((err) => {
-      console.log(err);
     });
 });
 
@@ -41,7 +38,6 @@ const fetchAllScores = () => {
   const game = JSON.parse(localStorage.getItem('game'));
   getAllScores(game.id).then((res) => {
     const scores = res;
-    console.log(scores);
     scoreList.innerHTML = '';
     scores.forEach((score) => {
       const li = `<li class="score-item">
