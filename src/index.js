@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-use-before-define */
-import { refreshBtn, form, scoreList, msg } from './modules/DOMElements.js';
+import {
+  refreshBtn, form, scoreList, msg,
+} from './modules/DOMElements.js';
 import { CreateGame, addScore, getAllScores } from './modules/middleware.js';
 
 const [name, score] = form.elements;
@@ -47,11 +49,11 @@ const fetchAllScores = () => {
     scoreList.innerHTML = scores
       .map(
         (
-          score
+          score,
         ) => `<li class="score-item list-group-item d-flex justify-content-between align-items-center">
         ${score.user}
     <span class="badge bg-primary rounded-pill">${score.score}</span>
-  </li>`
+  </li>`,
       )
       .join('');
   });
