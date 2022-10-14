@@ -14,7 +14,7 @@
 
 
 ## Live Demo
-> No Live Demo yet
+> [Demo](https://baayeh.github.io/leaderboard/)
 
 ## Getting Started
 
