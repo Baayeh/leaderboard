@@ -8,7 +8,8 @@
     "dev": "webpack --mode development",
     "start": "webpack serve --open ",
     "build": "webpack --mode production",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
   },
   "dependencies": {
     "css-loader": "^6.7.1",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "style-loader": "^3.3.1",
