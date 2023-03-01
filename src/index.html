@@ -4,28 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css" integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css"
+      integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>Leaderboard</title>
   </head>
   <body>
-    <main class="container w-50">
+    <div class="bg-image">
+      <div class="overlay"></div>
+    </div>
+    <main class="container">
       <header class="my-5 text-center">
         <h1 class="game-title mb-4"></h1>
+
+        <div id="top">
+          <h4 class="text-uppercase">Top Scorer</h4>
+          <div class="top-scorer"></div>
+        </div>
         <span class="bg-success text-white rounded-3 p-2 message"></span>
       </header>
       <div class="row my-4">
-        <div class="col-6 col-sm-12 col-md-6">
+        <div class="mt-5 mt-md-0 col-12 col-md-6 order-last order-md-first">
           <section class="scores">
             <div class="scores-header d-flex justify-content-between">
               <h4>Recent Scores</h4>
-              <button type="button" class="btn btn-outline-secondary btn-sm refresh">Refresh</button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm refresh"
+              >
+                Refresh
+              </button>
             </div>
             <!-- Score Lists -->
-            <ul class="score-list overflow-auto list-group mt-4 table-striped"></ul>
+            <ul
+              class="score-list overflow-auto list-group mt-4 table-striped"
+            ></ul>
           </section>
         </div>
-        <div class="col-6 col-sm-12 col-md-6">
+        <div class="col-12 col-md-6 order-first order-md-last">
           <!-- Add score -->
           <section class="add-score mt-sm-4 mt-md-0">
             <h2 class="text-center">Add your score</h2>
@@ -51,7 +72,9 @@
                 />
               </div>
               <div class="form-action text-end">
-                <button type="submit" class="btn btn-primary add-btn">Submit</button>
+                <button type="submit" class="btn btn-primary add-btn">
+                  Submit
+                </button>
               </div>
             </form>
           </section>
