@@ -2,14 +2,15 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-use-before-define */
 import {
-  refreshBtn,
   form,
-  scoreList,
-  msg,
   gameTitle,
+  msg,
+  refreshBtn,
+  scoreList,
+  topScorer,
 } from './modules/DOMElements.js';
-import api from './modules/Services.js';
 import Game from './modules/Game.js';
+import api from './modules/Services.js';
 
 const [name, score] = form.elements;
 
@@ -29,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const gameInstance = new Game(game.name, id);
       localStorage.setItem('game', JSON.stringify(gameInstance));
     });
+
+  fetchAllScores();
 });
 
 form.addEventListener('submit', (e) => {
@@ -48,6 +51,7 @@ form.addEventListener('submit', (e) => {
         msg.style.display = 'none';
       }, 5000);
       form.reset();
+      fetchAllScores();
     });
 });
 
@@ -60,9 +64,30 @@ refreshBtn.addEventListener('click', () => {
 const fetchAllScores = async () => {
   const game = JSON.parse(localStorage.getItem('game'));
   const scores = await api.getScores(game.id);
+
+  if (scores.result.length > 0) {
+    const highestScoringUser = scores.result
+      .reduce((acc, curr) => (acc.score > curr.score ? acc : curr));
+    topScorer.innerHTML = `
+    <span>${highestScoringUser.user}</span>
+    <span>${highestScoringUser.score} pts</span>
+  `;
+  } else {
+    topScorer.innerHTML = `
+    <p class="mb-0">No Score available yet</p>
+  `;
+  }
+
   scoreList.innerHTML = scores.result
     .map(
-      (score) => `<li class="score-item list-group-item d-flex justify-content-between align-items-center">${score.user}<span class="badge bg-primary rounded-pill">${score.score}</span></li>`,
+      (score, index) => `
+      <li class="score-item list-group-item d-flex justify-content-between align-items-center">
+        <span>
+          ${index + 1}
+        </span>
+       ${score.user}<span class="badge bg-primary rounded-pill">${
+  score.score
+}</span></li>`,
     )
     .join('');
 
